@@ -49,16 +49,16 @@ loop nums = do
         putStr if didFindAny then "That's one of the numbers, good job!\n" else ""
 
         let (lessc, greaterc) = (\(a, b) -> (length a, length b)) $ partition (< guess) nums'
-        putStr if didFindAny then "Still, too" else "Too"
+        putStr if didFindAny then "Still, too " else "Too "
         putStr case lessc of
           0 -> ""
-          1 -> " high"
-          x -> " high for " ++ show x
-        putStr if lessc > 0 && greaterc > 0 then " and too" else ""
+          1 -> "high"
+          x -> "high for " ++ show x
+        putStr if lessc > 0 && greaterc > 0 then " and too " else ""
         putStr case greaterc of
           0 -> ""
-          1 -> " low"
-          x -> " low for " ++ show x
+          1 -> "low"
+          x -> "low for " ++ show x
         putStrLn "!"
 
         loop nums'

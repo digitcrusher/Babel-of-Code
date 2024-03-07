@@ -1,0 +1,49 @@
+get_yes_no = (prompt) ->
+  io.write "#{prompt} (y/n) "
+  switch io.read! |> string.match('^%s*(.-)%s*$') |> string.lower
+    when 'y' then true
+    when 'n' then false
+    else get_yes_no prompt
+
+io.write 'Welcome to The Miraculous Game of Zgadywanko!\n'
+
+assert #arg <= 2, 'Too many arguments'
+max_num = tonumber(arg[1]) ?? 100
+numc = tonumber(arg[2]) ?? 1
+assert numc >= 1, 'The number of numbers must not be less than 1'
+assert max_num >= numc, "The upper bound must not be less than #{numc}"
+
+math.randomseed os.time!
+repeat
+  io.write 'Guess the ', (if numc == 1 then 'number' else "#{numc} numbers"), " from 1 to #{max_num}.\n"
+  nums = []
+  while #nums < numc
+    num = math.random(max_num)
+    nums[] = num if num not in nums
+
+  while true
+    io.write 'Your guess: '
+    guess = io.read '*num'
+    io.read!
+    continue if guess == nil
+
+    did_find_any = guess in nums
+    nums = [i for i in *nums when i ~= guess]
+    if #nums <= 0
+      io.write "You've found the last number, congratulations!\n"
+      break
+    io.write "That's one of the numbers, good job!\n" if did_find_any
+
+    lessc = #[i for i in *nums when i < guess]
+    greaterc = #nums - lessc
+    io.write if did_find_any then 'Still, too ' else 'Too '
+    if lessc > 0
+      io.write if lessc == 1 then 'high' else "high for #{lessc}"
+    io.write ' and too ' if lessc > 0 and greaterc > 0
+    if greaterc > 0
+      io.write if greaterc == 1 then 'low' else "low for #{greaterc}"
+    io.write '!\n'
+
+until not get_yes_no 'Do you want to play again?'
+
+io.write 'Thanks for playing, bye!\n'

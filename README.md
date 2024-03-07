@@ -1,18 +1,20 @@
 # Babel of Code
 
+## My thoughts
+
+*Lua-likes.* I only took a look at original languages that cleanly compile to Lua without dragging their own runtime or standard library along, and there are only two mainstream options fitting the description. [Fennel](https://fennel-lang.org/) is simply Lua with a Lisp syntax and not much of an ergonomic improvement over Lua… Unlike [YueScript](https://yuescript.org/) - a fork of the dormant MoonScript - which actually has features (eg. array comprehension) that make Lua easier to write in, although the syntax may be a bit too sugary in some places. Of course, those are not the only possibilties available to you since there do exist Lua transpilers for a plethora of other established programming languages, including but not limited to: C#, Idris, JavaScript, Oberon, Python, Ruby, Rust, Standard ML. For a full list go check out [this awesome repository](https://github.com/hengestone/lua-languages).
+
 Lisps: Scheme, Common Lisp, Clojure, Racket, Dylan, Guile
-MLs: Standard ML, OCaml, F#, Alice ML, Roc
-Haskells: Haskell, Curry
+functional: Haskell, OCaml, Standard ML, F#, Alice ML, Roc, Idris, Clean, ATS, Curry
 logic: Prolog, Logtalk, λProlog, Mercury, Gödel
 array: APL, J, BQN, Octave, Wolfram, R, GAMS
 scripting: Awk, Perl, Raku, Ruby, Sed, Tcl
 Oz, Erlang, Dart, Elixir, Opa, Gleam
-Fortran, ALGOL, COBOL, PL/I, Rexx
+Fortran, ALGOL, COBOL, Rexx
 Simula, CLU, Pascal, Modula, Ada, Eiffel
 BASICs: YABASIC, BWBASIC, TI-BASIC, Visual Basic .NET
 Smalltalks: Smalltalk, Self, Squeak
 Objective C, Swift
-Luas: Lua, MoonScript, Fennel, https://github.com/hengestone/lua-languages
 JavaScripts: PureScript, Elm, CoffeeScript
 Java-like: Java 17, C#, Kotlin, Groovy, Gosu, Scala
 concurrent: Chapel, Occam
@@ -26,9 +28,6 @@ ParaSail
 proof assistants: F*, Lean
 bizarre: Forth, UCBLogo
 
-rejected: C, C++, Datalog, JavaScript, Python, TypeScript, Bash/Sh/Zsh, Agda, Coq, Beef, Jai, MATLAB, Newsqueak, jq, Limbo, PL/SQL, Solidity, Soufflé, V, OPS5
-
-Advent of Code 2015
 Zgadywanko - command-line arguments, interactive terminal I/O, random number generation, arbitrary-precision integers, collection operations
 Thumbnailer
 GNU Emacs psychoanalist over Telnet

@@ -68,15 +68,15 @@ class Zgadywanko {
 
         final var lessc = nums.stream().filter(x -> x.compareTo(guess) < 0).count();
         final var greaterc = nums.size() - lessc;
-        System.out.print(didFindAny ? "Still, too" : "Too");
+        System.out.print(didFindAny ? "Still, too " : "Too ");
         if(lessc > 0) {
-          System.out.print(lessc == 1 ? " high" : " high for " + lessc);
+          System.out.print(lessc == 1 ? "high" : "high for " + lessc);
         }
         if(lessc > 0 && greaterc > 0) {
-          System.out.print(" and too");
+          System.out.print(" and too ");
         }
         if(greaterc > 0) {
-          System.out.print(greaterc == 1 ? " low" : " low for " + greaterc);
+          System.out.print(greaterc == 1 ? "low" : "low for " + greaterc);
         }
         System.out.println("!");
       }
