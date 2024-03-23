@@ -4,7 +4,11 @@
 
 *Lua-likes.* I only took a look at original languages that cleanly compile to Lua without dragging their own runtime or standard library along, and there are only two mainstream options fitting the description. [Fennel](https://fennel-lang.org/) is simply Lua with a Lisp syntax and not much of an ergonomic improvement over Lua… Unlike [YueScript](https://yuescript.org/) - a fork of the dormant MoonScript - which actually has features (eg. array comprehension) that make Lua easier to write in, although the syntax may be a bit too sugary in some places. Of course, those are not the only possibilties available to you since there do exist Lua transpilers for a plethora of other established programming languages, including but not limited to: C#, Idris, JavaScript, Oberon, Python, Ruby, Rust, Standard ML. For a full list go check out [this awesome repository](https://github.com/hengestone/lua-languages).
 
-Lisps: Scheme, Common Lisp, Clojure, Racket, Dylan, Guile
+I omitted Common Lisp since it looks to be the C++ of Lisps, ie. legacy and bloated.
+
+Clojure, just like any JVM-based language, has visible Java goo leaking out through its seems.
+
+Lisps: Scheme, Clojure, Racket, Dylan
 functional: Haskell, OCaml, Standard ML, F#, Alice ML, Roc, Idris, Clean, ATS, Curry
 logic: Prolog, Logtalk, λProlog, Mercury, Gödel
 array: APL, J, BQN, Octave, Wolfram, R, GAMS
@@ -26,7 +30,7 @@ SNOBOL, Snowball, Icon, Unicon
 Rebol, Red, Boron
 ParaSail
 proof assistants: F*, Lean
-bizarre: Forth, UCBLogo
+bizarre: Factor, Forth, UCBLogo
 
 Zgadywanko - command-line arguments, interactive terminal I/O, random number generation, arbitrary-precision integers, collection operations
 Thumbnailer
