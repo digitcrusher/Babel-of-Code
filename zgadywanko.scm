@@ -7,14 +7,14 @@
         ((equal? ans "n") #f)
         (else (get-yes-no prompt))))
 
-(define (random-not-in n list)
-  (let ((num (+ (random-integer n) 1)))
-    (if (member num list) (random-not-in n list) num)))
+(define (random-not-in max-num list)
+  (let ((num (+ (random-integer max-num) 1)))
+    (if (member num list) (random-not-in max-num list) num)))
 
-(define (random-nums n count)
+(define (random-nums max-num count)
   (if (<= count 0) '()
-    (let ((rest (random-nums n (- count 1))))
-      (cons (random-not-in n rest) rest))))
+    (let ((rest (random-nums max-num (- count 1))))
+      (cons (random-not-in max-num rest) rest))))
 
 (define (loop nums)
   (display "Your guess: ")
