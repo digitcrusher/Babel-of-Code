@@ -1,6 +1,4 @@
 import java.math.BigInteger;
-import java.util.InputMismatchException;
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -10,15 +8,12 @@ class Zgadywanko {
   static final Scanner input = new Scanner(System.in);
 
   static boolean getYesNo(final String prompt) {
-    while(true) {
-      System.out.print(prompt + " (y/n) ");
-      final var ans = input.next();
-      if(ans.equalsIgnoreCase("y")) {
-        return true;
-      } else if(ans.equalsIgnoreCase("n")) {
-        return false;
-      }
-    }
+    System.out.print(prompt + " (y/n) ");
+    return switch(input.nextLine().strip().toLowerCase()) {
+      case "y" -> true;
+      case "n" -> false;
+      default -> getYesNo(prompt);
+    };
   }
 
   static BigInteger randBigInt(final BigInteger a, final BigInteger b) {
@@ -46,15 +41,14 @@ class Zgadywanko {
 
     do {
       System.out.println("Guess the " + (numc == 1 ? "number" : numc + " numbers") + " from 1 to " + maxNum + ".");
-      final var nums = Stream.generate(() -> randBigInt(BigInteger.ONE, maxNum)).distinct().limit(numc).collect(Collectors.toCollection(LinkedList::new));
+      final var nums = Stream.generate(() -> randBigInt(BigInteger.ONE, maxNum)).distinct().limit(numc).collect(Collectors.toSet());
 
       while(true) {
         System.out.print("Your guess: ");
         BigInteger guess;
         try {
-          guess = input.nextBigInteger();
-        } catch(InputMismatchException e) {
-          input.next();
+          guess = new BigInteger(input.nextLine().strip());
+        } catch(NumberFormatException e) {
           continue;
         }
 

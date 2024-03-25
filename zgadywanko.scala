@@ -18,7 +18,7 @@ def randBigInt(a: BigInt, b: BigInt): BigInt =
 def getNum(prompt: String): BigInt =
   try
     BigInt(readLine(s"${prompt} ").strip)
-  catch case _: java.lang.NumberFormatException =>
+  catch case _: NumberFormatException =>
     getNum(prompt)
 
 @main

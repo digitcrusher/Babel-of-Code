@@ -2,12 +2,11 @@ import java.math.BigInteger
 import java.util.concurrent.ThreadLocalRandom
 
 fun getYesNo(prompt: String): Boolean {
-  while(true) {
-    print("${prompt} (y/n) ")
-    when(readln().trim().lowercase()) {
-      "y" -> return true
-      "n" -> return false
-    }
+  print("${prompt} (y/n) ")
+  return when(readln().trim().lowercase()) {
+    "y" -> true
+    "n" -> false
+    else -> getYesNo(prompt)
   }
 }
 
