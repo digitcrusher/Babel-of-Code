@@ -42,8 +42,7 @@ pub fn main() !void {
   defer nums.deinit();
   var rng = std.rand.DefaultPrng.init(@intCast(std.time.nanoTimestamp()));
 
-  var shouldContinue = true;
-  while(shouldContinue) {
+  while(true) {
     try output.writeAll("Guess the ");
     if(numc == 1) {
       try output.writeAll("number");
@@ -101,7 +100,7 @@ pub fn main() !void {
       try output.writeAll("!\n");
     }
 
-    shouldContinue = try getYesNo("Do you want to play again?");
+    if(!try getYesNo("Do you want to play again?")) break;
   }
 
   try output.writeAll("Thanks for playing, bye!\n");
