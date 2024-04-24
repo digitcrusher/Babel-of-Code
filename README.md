@@ -14,17 +14,16 @@ Lisps: Dylan
 functional: OCaml, Standard ML, Alice ML, Roc, Idris, Clean, ATS, Curry
 logic: Prolog, Mercury, Gödel
 array: APL, J, BQN, Octave, R
-scripting: Raku, Ruby, Rexx, Tcl
+scripting: Raku, Rexx, Tcl
 Oz, Erlang, Dart, Elixir, Opa, Gleam
 Fortran, Pascal, Ada, Eiffel, Sather
 Smalltalks: Smalltalk, Self, Squeak
-Objective C, Swift
 JavaScripts: PureScript, Elm, CoffeeScript, Gren
 C# platform: C#, F#, Visual Basic .NET
 concurrent: Chapel, Occam
-systems: Carbon, Crystal, D, Haxe, Julia, Lobster, Nim, Rust
+systems: Carbon, Crystal, D, Haxe, Julia, Lobster, Nim, Rust, Onyx
 minimalistic: Vale
-embeddable: Wren, Gravity, AngelScript, Squirrel
+embeddable: Wren, Gravity, AngelScript, Squirrel, Io
 SNOBOL, Snowball, Icon, Unicon
 Rebol, Red, Boron
 ParaSail

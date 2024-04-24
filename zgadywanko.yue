@@ -19,7 +19,7 @@ repeat
   nums = []
   while #nums < numc
     num = math.random(max_num)
-    nums[] = num if num not in nums
+    nums[] = num unless num in nums
 
   while true
     io.write 'Your guess: '

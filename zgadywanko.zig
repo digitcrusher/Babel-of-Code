@@ -40,7 +40,7 @@ pub fn main() !void {
   var gpa = std.heap.GeneralPurposeAllocator(.{}){};
   var nums = std.array_hash_map.AutoArrayHashMap(@TypeOf(maxNum), void).init(gpa.allocator());
   defer nums.deinit();
-  var rng = std.rand.DefaultPrng.init(@intCast(std.time.nanoTimestamp()));
+  var rng = std.rand.DefaultPrng.init(@bitCast(@as(i64, @truncate(std.time.nanoTimestamp()))));
 
   while(true) {
     try output.writeAll("Guess the ");

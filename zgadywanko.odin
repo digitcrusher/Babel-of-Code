@@ -141,11 +141,7 @@ main :: proc() {
           greaterc += 1
         }
       }
-      if did_find_any {
-        fmt.print("Still, too ")
-      } else {
-        fmt.print("Too ")
-      }
+      fmt.print("Still, too " if did_find_any else "Too ")
       if lessc == 1 {
         fmt.print("high")
       } else if lessc > 0 {
